@@ -52,7 +52,7 @@
         <h3>{{ obj.title_post }}
          <small>{{ obj.timestamp|timesince }} ago</small></h3><br>
           By: {{ obj.user }}<br>
-         {{ obj.content|linebreaks|truncatechars:130 }}<br>
+         {{ obj.info|linebreaks|truncatechars:130 }}<br>
           {% if obj.user.username == user.username %}
           <p><a href="{% url "viewPost" obj.id %}" ><button  class="btn btn-primary">View</button></a></p>
           {% endif %}

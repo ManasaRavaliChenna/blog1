@@ -15,6 +15,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 </head>
 <body>
+<nav class="navbar navbar-default">
+     <div class="container-fluid">
+    <div class="navbar-header">
+        <font color="black"> Blog</font>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="{% url "list_posts" %}">Home</a></li>
+    </ul>
+      {% if not user.is_authenticated %}
+    <ul class="nav navbar-nav navbar-right">
+      <li class = "signup">
+          <a  href="{% url "register" %}">Sign Up</a>
+      </li>
+      <li class = "login">
+          <a  href="{% url "login" %}" > Login</a>
+      </li>
+      <li id = "username" style="display: none"></li>
+    </ul>
+         {% endif %}
+  </div>
+  </nav><br><br><br>
 <div class="container">
         <form action="" method="post">
             {% csrf_token %}
